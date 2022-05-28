@@ -1,0 +1,18 @@
+# Impedir que se pueda ver el listado de contenidos de un directorio
+
+Options All -Indexes
+
+# Url Amigables
+
+RewriteEngine on
+
+
+#buscar directorio valido
+RewriteRule ^([-a-zA-Z0-9ñÑ_/]+)$ index.php?modulo=$1
+
+
+#RewriteEngine on
+#RewriteCond %{REMOTE_ADDR} !^999.999.999.999 #permitir UNIDA IP
+#RewriteCond %{REQUEST_URI} !/mantenimiento/index.html$ [NC]
+#RewriteCond %{REQUEST_URI} !.(jpe?g?|png|gif|css|js) [NC]
+#RewriteRule .* /mantenimiento/index.html [R=302,L]
